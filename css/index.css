@@ -1,0 +1,202 @@
+*{
+    
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+.fullScreen {
+    background-color: #000000;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.fullScreen__content {
+    max-width: 1200px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullScreen__clock.active {
+    background-color: #000000d7;
+    width: 50%;
+    display: inline-block;
+}
+
+.fullScreen__clock {
+    display: none;
+}
+
+#first.fullScreen__clock {
+    box-sizing: content-box;
+    aspect-ratio: 10/3;
+    border-radius: 5px;
+    padding: 0 auto;
+}
+
+.clock {
+    width: 95%;
+    position: relative;
+    top: 50%;
+    aspect-ratio: 9/2;
+    transform: translate(0, -50%);
+    display: grid;
+    grid-template-columns: 3fr 3fr 1fr 3fr 3fr 1fr 3fr 3fr;
+    grid-gap: calc(100% / 27);
+}
+
+.number {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.number span {
+    display: inline-block;
+    width: 80%;
+    height: 5%;
+    position: absolute;
+    margin: 0 10%;
+    border-radius: 5px/50%;
+    transition: all 0.4s ease;
+    background: black;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+}
+
+.nine .firstSpan,
+.six .firstSpan,
+.five .firstSpan,
+.four .secondSpan,
+.four .firstSpan,
+.zero .firstSpan,
+.eight .firstSpan {
+    top: 25%;
+    left: -50%;
+    transform: rotate(90deg);
+}
+
+.two .firstSpan,
+.two .secondSpan,
+.three .firstSpan,
+.three .secondSpan,
+.five .secondSpan,
+.six .secondSpan,
+.seven .firstSpan,
+.seven .secondSpan,
+.nine .secondSpan,
+.zero .secondSpan,
+.eight .secondSpan {
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+}
+
+.one .firstSpan,
+.one .secondSpan,
+.one .thirdSpan,
+.two .thirdSpan,
+.three .thirdSpan,
+.four .thirdSpan,
+.seven .thirdSpan,
+.seven .seventhSpan,
+.nine .thirdSpan,
+.zero .thirdSpan,
+.eight .thirdSpan {
+    top: 25%;
+    right: -50%;
+    transform: rotate(90deg);
+}
+
+.one .fourthSpan,
+.one .fifthSpan,
+.one .sixthSpan,
+.one .seventhSpan,
+.three .fourthSpan,
+.four .fourthSpan,
+.four .fifthSpan,
+.five .fourthSpan,
+.six .fourthSpan,
+.seven .fourthSpan,
+.seven .fifthSpan,
+.seven .sixthSpan,
+.nine .fourthSpan,
+.zero .fourthSpan,
+.eight .fourthSpan {
+    bottom: 25%;
+    right: -50%;
+    transform: rotate(90deg);
+}
+
+.two .fourthSpan,
+.two .fifthSpan,
+.three .fifthSpan,
+.three .sixthSpan,
+.five .fifthSpan,
+.six .fifthSpan,
+.nine .fifthSpan,
+.zero .fifthSpan,
+.eight .fifthSpan {
+    bottom: 0;
+    left: 0;
+    transform: rotate(0deg);
+}
+
+.two .sixthSpan,
+.six .sixthSpan,
+.zero .sixthSpan,
+.zero .seventhSpan,
+.eight .sixthSpan {
+    bottom: 25%;
+    left: -50%;
+    transform: rotate(90deg);
+}
+
+.two .seventhSpan,
+.three .sixthSpan,
+.three .seventhSpan,
+.four .sixthSpan,
+.four .seventhSpan,
+.five .sixthSpan,
+.five .seventhSpan,
+.six .seventhSpan,
+.nine .sixthSpan,
+.nine .seventhSpan,
+.eight .seventhSpan {
+    top: 50%;
+    left: 0;
+    transform: rotate(0deg);
+}
+
+.points {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.points span {
+    display: inline-block;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: black;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+    border-radius: 50%;
+    animation: blinking 1s infinite .5s;
+}
+
+@keyframes blinking {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
